@@ -1,0 +1,29 @@
+<div class="section section-signup page-header mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+        <div class="card card-login">
+
+          <form class="text-center border border-light p-5" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+                #f="ngForm" novalidate>
+            <p class="h4 mb-4">Sign in</p>
+            <input type="text" class="form-control mb-4" autofocus placeholder="Username" name="email"
+                   [(ngModel)]="form.username" #username="ngModel" required>
+            <input type="password" class="form-control" placeholder="Password" name="password"
+                   [(ngModel)]="form.password" #password="ngModel" required minlength="6">
+            <div *ngIf="errorMessage"
+                 class="text-danger text-center mt-2" style="font-size: 100%">Invalid creditentials!
+            </div>
+
+            <button class="btn btn-info btn-block my-4" type="submit" style="font-size: 1.3rem;"
+                    [disabled]="!isDisabled()">Sign in</button>
+            <p>Not a member?
+              <a (click)="navigateToRegister()" style="color: #337ab7"><u>Register</u></a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

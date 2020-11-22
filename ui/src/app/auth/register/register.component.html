@@ -1,0 +1,50 @@
+<div class="section section-signup page-header mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+        <div class="card card-login">
+
+          <form [formGroup]="registerForm" class="text-center border border-light p-5">
+
+            <p class="h4 mb-4">Sign up</p>
+
+            <input type="text" class="form-control mb-4" placeholder="First name" formControlName="firstName">
+            <input type="text" class="form-control mb-4" placeholder="Last name" formControlName="lastName">
+
+            <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
+
+            <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
+            <input type="password" class="form-control mb-4" placeholder="Confirm password"
+                   formControlName="passwordMatcher">
+
+            <div *ngIf="registerForm.get('password')!.hasError('pattern')"
+                 class="text-danger text-center mt-2" style="font-size: 100%">
+              The password must contain at least one digit!
+            </div>
+
+            <div *ngIf="registerForm.get('password')!.hasError('minLength')"
+                 class="text-danger text-center mt-2" style="font-size: 100%">
+              The password must contain at least 6 characters!
+            </div>
+
+            <div *ngIf="registerForm.hasError('match')"
+                 class="text-danger text-center mt-2" style="font-size: 100%">The passwords do not match!
+            </div>
+            <div *ngIf="errorMessage"
+                 class="text-danger text-center mt-2" style="font-size: 100%">{{errorMessage}}
+            </div>
+            <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!this.registerForm.valid"
+                    (click)="handleRegister()" style="font-size: 1.3rem;">Sign up
+            </button>
+
+            <hr>
+            <p>Already a member?
+              <a (click)="navigateToLogin()" style="color: #337ab7"><u>Sign in</u></a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -15,7 +15,6 @@ import ro.fmi.HeathTracker.util.ResponseEntityUtil;
 import javax.validation.Valid;
 
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthResource {
