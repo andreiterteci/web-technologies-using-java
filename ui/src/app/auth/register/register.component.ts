@@ -27,7 +27,9 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(null, [Validators.required,
         Validators.pattern('.*[0-9].*'), Validators.minLength(6)]),
       passwordMatcher: new FormControl(null, Validators.required)
-    }, { validators: [this.validatePasswordsMatch.bind]});
+    }
+      // { validators: [this.validatePasswordsMatch.bind]}
+      );
   }
 
   ngOnInit(): void {

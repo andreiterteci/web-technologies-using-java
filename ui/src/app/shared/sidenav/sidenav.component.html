@@ -1,0 +1,42 @@
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <div style="display: flex;">
+      <div class="mx-auto my-auto">
+        <b style="font-size: 30px; color: white">Health</b><b style="font-size: 40px; color: #0b51c5">Tracker</b>
+      </div>
+    </div>
+    <div class="p-4 pt-5">
+      <ul class="list-unstyled components mb-5">
+        <li routerLinkActive="active" routerLink="/home">
+          <a >Home</a>
+        </li>
+        <li routerLinkActive="active" routerLink="/exercises">
+          <a >Exercises</a>
+        </li>
+        <li routerLinkActive="active" routerLink="/meals">
+          <a>Meals</a>
+        </li>
+        <li routerLinkActive="active" routerLink="/account">
+          <a>Account</a>
+        </li>
+        <li (click)="tokenStorageService.signOut()">
+          <a>Log out</a>
+        </li>
+      </ul>
+
+      <div class="footer">
+        <p>
+          Copyright &copy; 2020</p>
+        <p>All rights reserved</p>
+          <p>This project was implemented and developed by Andrei Terteci
+         </p>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

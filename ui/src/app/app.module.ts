@@ -7,10 +7,12 @@ import {AuthModule} from "./auth/auth.module";
 import {AuthService} from "./auth/services/auth.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CustomHttpInterceptorService} from "./auth/services/custom-http-interceptor.service";
+import {SidenavComponent} from "./shared/sidenav/sidenav.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

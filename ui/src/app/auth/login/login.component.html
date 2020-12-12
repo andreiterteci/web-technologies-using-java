@@ -7,8 +7,8 @@
           <form class="text-center border border-light p-5" name="form" (ngSubmit)="f.form.valid && onSubmit()"
                 #f="ngForm" novalidate>
             <p class="h4 mb-4">Sign in</p>
-            <input type="text" class="form-control mb-4" autofocus placeholder="Username" name="email"
-                   [(ngModel)]="form.username" #username="ngModel" required>
+            <input type="text" class="form-control mb-4" autofocus placeholder="Email" name="email"
+                   [(ngModel)]="form.email" #email="ngModel" required>
             <input type="password" class="form-control" placeholder="Password" name="password"
                    [(ngModel)]="form.password" #password="ngModel" required minlength="6">
             <div *ngIf="errorMessage"
