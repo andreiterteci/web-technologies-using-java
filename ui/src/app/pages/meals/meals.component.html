@@ -1,1 +1,27 @@
-<p>meals works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Meal list</h2>
+  </div>
+  <div class="panel-body">
+    <table id="mealTable" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+
+      <thead class="black white-text">
+      <tr>
+        <th>Date</th>
+        <th>Calories</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let meal of meals">
+        <td>{{meal.date}}</td>
+        <td>{{meal.calories}}</td>
+        <td>
+          <button style='margin-right:16px' (click)="delete(meal.id)" class="btn btn-danger">Delete</button>
+          <button style='margin-right:16px' (click)="update(meal.id)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

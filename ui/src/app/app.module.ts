@@ -8,6 +8,8 @@ import {AuthService} from "./auth/services/auth.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CustomHttpInterceptorService} from "./auth/services/custom-http-interceptor.service";
 import {SidenavComponent} from "./shared/sidenav/sidenav.component";
+import * as $ from 'jquery';
+import {DataTablesModule} from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {SidenavComponent} from "./shared/sidenav/sidenav.component";
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [AuthService,
     {
