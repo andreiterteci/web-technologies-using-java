@@ -21,9 +21,13 @@ public class Fitness {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "fitness_id")
     private List<Exercise> exercise;
 
     private Long duration;
+
+    @ManyToOne
+    @JoinColumn(name = "daily_data_id")
+    private DailyData dailyData;
 }

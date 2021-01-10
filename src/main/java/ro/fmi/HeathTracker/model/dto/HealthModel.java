@@ -4,20 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ro.fmi.HeathTracker.domain.enums.Recommendation;
 
-import java.time.LocalDate;
 import java.util.List;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class HealthDataModel {
-    private String id;
+public class HealthModel {
 
-    private LocalDate date;
+    private String healthScore;
 
-    private FitnessModel fitness;
+    private Double healthScoreDecimal;
 
-    private List<MealModel> meals;
+    private List<Recommendation> recommendations;
 }

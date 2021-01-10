@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import ro.fmi.HeathTracker.util.StringListConverter;
 
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -29,4 +26,8 @@ public class Meal {
 
     @Convert(converter = StringListConverter.class)
     private List<String> names;
+
+    @ManyToOne
+    @JoinColumn(name = "daily_data_id")
+    private DailyData dailyData;
 }

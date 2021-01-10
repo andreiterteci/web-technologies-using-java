@@ -9,7 +9,7 @@ import ro.fmi.HeathTracker.model.security.JwtResponseModel;
 import ro.fmi.HeathTracker.model.security.LoginModel;
 import ro.fmi.HeathTracker.model.security.SignUpModel;
 import ro.fmi.HeathTracker.service.MessageService;
-import ro.fmi.HeathTracker.service.UserService;
+import ro.fmi.HeathTracker.service.AuthenticationService;
 import ro.fmi.HeathTracker.util.ResponseEntityUtil;
 
 import javax.validation.Valid;
@@ -19,7 +19,7 @@ import javax.validation.Valid;
 @RequestMapping("/api/auth")
 public class AuthResource {
 
-    private final UserService userService;
+    private final AuthenticationService userService;
 
     private final MessageService messageService;
 

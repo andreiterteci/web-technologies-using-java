@@ -1,1 +1,61 @@
-<p>account works!</p>
+<button class="btn btn-info btn-rounded mr-3 mt-2 px-3 py-2 mb-5" (click)="updateAccount()">
+  <i class="material-icons">local_dining</i> Update account
+</button>
+<div class="row" *ngIf="this.informationIsLoaded">
+  <div class="col-6">
+    <div style="display: flex;">
+      <h1>Name: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.firstName}}
+        {{currentAccount.lastName}}
+      </h2>
+    </div>
+    <div style="display: flex;">
+      <h1>Email: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.email}}
+      </h2>
+    </div>
+    <div style="display: flex;" *ngIf="currentAccount.gender">
+      <h1>Gender: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.gender}}
+      </h2>
+    </div>
+
+  </div>
+
+  <div class="col-6">
+    <div style="display: flex;" *ngIf="currentAccount.fitnessPlan">
+      <h1>Fitness plan: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.fitnessPlan}}
+      </h2>
+    </div>
+
+    <div style="display: flex;" *ngIf="currentAccount.height">
+      <h1>Height: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.height}}
+      </h2>
+    </div>
+
+    <div style="display: flex;" *ngIf="currentAccount.weight">
+      <h1>Weight: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.weight}}
+      </h2>
+    </div>
+
+    <div style="display: flex;" *ngIf="currentAccount.weightGoal">
+      <h1>Weight: </h1>
+      <h2 class="ml-3">
+        {{currentAccount.weightGoal}}
+      </h2>
+    </div>
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>

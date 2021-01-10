@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @AllArgsConstructor
@@ -17,4 +18,6 @@ public class FitnessModel {
     private List<ExerciseModel> exercises;
 
     private Long duration;
+
+    private LocalDate date;
 }

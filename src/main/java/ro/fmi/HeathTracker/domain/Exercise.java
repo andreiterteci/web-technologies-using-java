@@ -27,4 +27,8 @@ public class Exercise {
     private ExerciseType exerciseType;
 
     private Long duration;
+
+    @ManyToOne
+    @JoinColumn(name = "fitness_id")
+    private Fitness fitness;
 }

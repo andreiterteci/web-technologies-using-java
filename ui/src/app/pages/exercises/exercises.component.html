@@ -1,1 +1,31 @@
-<p>exercises works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Fitness list</h2>
+  </div>
+  <div class="panel-body">
+    <table id="mealTable" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+
+      <thead class="black white-text">
+      <tr>
+        <th>Date</th>
+        <th>Total Duration</th>
+        <th>Exercises</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let fitness of fitness">
+        <td>{{fitness.date | date}}</td>
+        <td>{{fitness.duration}}</td>
+        <td>{{getFormattedExercises(fitness.exercises)}}</td>
+        <td>
+          <button style='margin-right:16px' (click)="delete(fitness)" class="btn btn-danger">Delete</button>
+          <button style='margin-right:16px' (click)="update(fitness.id)" class="btn btn-success" style="margin-left: 10px">Edit</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

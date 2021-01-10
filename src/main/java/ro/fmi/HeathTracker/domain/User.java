@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import ro.fmi.HeathTracker.domain.enums.FitnessPlan;
+import ro.fmi.HeathTracker.domain.enums.Gender;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -43,5 +45,17 @@ public class User {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private List<HealthData> healthData;
+    private List<DailyData> dailyData;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    private Double weight;
+
+    private Double height;
+
+    @Enumerated(EnumType.STRING)
+    private FitnessPlan fitnessPlan;
+
+    private Double weightGoal;
 }

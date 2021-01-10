@@ -9,15 +9,17 @@
       <tr>
         <th>Date</th>
         <th>Calories</th>
+        <th>Meals</th>
         <th></th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let meal of meals">
-        <td>{{meal.date}}</td>
+        <td>{{meal.date | date}}</td>
         <td>{{meal.calories}}</td>
+        <td>{{getFormattedMeals(meal.names)}}</td>
         <td>
-          <button style='margin-right:16px' (click)="delete(meal.id)" class="btn btn-danger">Delete</button>
+          <button style='margin-right:16px' (click)="delete(meal)" class="btn btn-danger">Delete</button>
           <button style='margin-right:16px' (click)="update(meal.id)" class="btn btn-success" style="margin-left: 10px">Edit details</button>
         </td>
       </tr>
@@ -25,3 +27,5 @@
     </table>
   </div>
 </div>
+
+<router-outlet></router-outlet>

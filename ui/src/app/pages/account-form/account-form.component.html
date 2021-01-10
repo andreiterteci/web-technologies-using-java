@@ -1,0 +1,85 @@
+<div class="main">
+  <div class="container">
+
+    <form [formGroup]="accountForm">
+      <div class="row">
+        <div class="col-6">
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="nameInput">First name</label>
+              <input type="text" id="nameInput" class="form-control" formControlName="firstName"/>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="lastNameInput">Last name</label>
+              <input type="text" class="form-control" id="lastNameInput" formControlName="lastName"/>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" formControlName="email"/>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="gender">Gender</label>
+              <select class="select-dropdown" id="gender" style="width: 100%" formControlName="gender">
+                <option *ngFor="let g of genderValues" [value]="g">{{gender[g]}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="weight">Weight</label>
+              <input type="text" class="form-control" id="weight" formControlName="weight"/>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="height">Height</label>
+              <input type="text" class="form-control" id="height" formControlName="height"/>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="form-group bmd-form-group">
+              <label for="fitnessPlan">Fitness plan</label>
+              <select class="select-dropdown" id="fitnessPlan" style="width: 100%"
+                      formControlName="fitnessPlan">
+                <option *ngFor="let plan of planValues" [value]="plan">{{fitnessPlans[plan]}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-3" *ngIf="this.accountForm.get('fitnessPlan').value != fitnessPlans.MAINTAIN_WEIGHT">
+            <div class="form-group bmd-form-group">
+              <label for="weightGoal">Weight goal</label>
+              <input type="text" class="form-control" id="weightGoal" formControlName="weightGoal"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+    <div class="text-center mt-5">
+      <button class="btn btn-warning btn-rounded ml-3 px-3 py-2"
+              (click)="handleCancel(dialogOptions.CANCEL)">
+        <i class="material-icons">cancel</i>
+        Cancel
+      </button>
+      <button class="btn btn-info btn-rounded ml-3 px-3 py-2"
+              (click)="handleSave()" style="font-size: .7rem;">
+        <i class="material-icons">save</i>
+        Save changes
+      </button>
+    </div>
+</div>

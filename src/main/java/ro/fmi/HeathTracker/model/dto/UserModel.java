@@ -26,5 +26,5 @@ public class UserModel {
 
     private Set<RoleModel> roles;
 
-    private List<HealthDataModel> healthData;
+    private List<DailyDataModel> dailyDataModels;
 }
