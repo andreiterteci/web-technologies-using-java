@@ -20,9 +20,9 @@ export class AccountFormComponent implements OnInit {
   currentRoute: ActivatedRoute;
   accountForm: FormGroup;
   gender = Gender;
-  genderValues: any[] = [];
+  genderValues: Gender[] = [];
   fitnessPlans = FitnessPlan;
-  planValues: any[] = [];
+  planValues: FitnessPlan[] = [];
 
   constructor(private currentDialogRef: MatDialogRef<AccountFormComponent>,
               private accountService: AccountService,

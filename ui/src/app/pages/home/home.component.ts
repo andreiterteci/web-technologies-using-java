@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   informationIsLoaded = false;
   health: HealthModel;
-  recommenation = Recommendation;
+  recommendation = Recommendation;
 
   constructor(private customRoutingService: CustomModalRoutingAndStateService,
               public dialog: MatDialog,

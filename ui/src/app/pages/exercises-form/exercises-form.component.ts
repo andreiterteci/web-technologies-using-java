@@ -21,7 +21,7 @@ export class ExercisesFormComponent implements OnInit {
   @ViewChild('durationInput') durationInput: ElementRef;
   dialogOptions = DialogOptions;
   exerciseTypes = ExerciseType;
-  selectValues: any[] = [];
+  selectValues: ExerciseType[] = [];
   currentRoute: ActivatedRoute;
   currentFitness: FitnessModel = {
     id: null,
